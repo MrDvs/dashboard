@@ -19,7 +19,7 @@ class DB {
 
 	public static function create() {
 
-		$sql = "CREATE TABLE `bookmarks` (
+		$sql = "CREATE TABLE IF NOT EXISTS `bookmarks` (
 			`id` int(11) NOT NULL AUTO_INCREMENT,
 			`name` varchar(255) NOT NULL,
 			`url` varchar(255) NOT NULL,
@@ -29,7 +29,7 @@ class DB {
 			) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1";
 		self::connect()->exec($sql);
 
-		$sql = "CREATE TABLE `cryptos` (
+		$sql = "CREATE TABLE IF NOT EXISTS `cryptos` (
 			`id` int(11) NOT NULL AUTO_INCREMENT,
 			`cmc_id` int(11) NOT NULL,
 			`amount` int(11) NOT NULL,
@@ -38,7 +38,7 @@ class DB {
 			) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1";
 		self::connect()->exec($sql);
 
-		$sql = "CREATE TABLE `todos` (
+		$sql = "CREATE TABLE IF NOT EXISTS `todos` (
 			`id` int(11) NOT NULL AUTO_INCREMENT,
 			`title` varchar(255) NOT NULL,
 			`description` text,
