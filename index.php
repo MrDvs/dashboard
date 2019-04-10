@@ -1,6 +1,7 @@
 <?php 
 
 require './DB.php';
+DB::create();
 session_start();
 
 ?>
