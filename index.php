@@ -1,4 +1,9 @@
-<?php require './DB.php'; ?>
+<?php 
+
+require './DB.php';
+session_start();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head style="background-color: green !important">
