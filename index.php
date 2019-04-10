@@ -3,9 +3,7 @@
 require './DB.php';
 session_start();
 
-$_SESSION['mode'] = "light";
-
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head style="background-color: green !important">
@@ -30,6 +28,39 @@ $_SESSION['mode'] = "light";
 		<div class="row">
 			<div id="currentTime"></div>
 			<script src="./components/currentTime.js"></script>
+			<div id="modeSelector">
+				<div class="custom-control custom-switch">
+					<input type="checkbox" class="custom-control-input" id="customSwitch1" onclick="toggleDarkmode(this)" <?php echo ($_SESSION['mode'] == "dark" ? 'checked' : '') ?>>
+					<label class="custom-control-label" for="customSwitch1">Toggle Dark mode</label>
+				</div>
+				<script>
+					function toggleDarkmode(state) {
+						if (state.checked) {
+							$.ajax({
+					            url: "./ajax/toggleDarkmode.php",
+					            type: "POST",
+					            data: { 'mode': "dark" },                   
+					            success: function()
+			                        {
+			                        	location.reload();
+			                            console.log("Updated");                                    
+			                        }
+					        });
+						} else {
+							$.ajax({
+					            url: "./ajax/toggleDarkmode.php",
+					            type: "POST",
+					            data: { 'mode': "light" },                   
+					            success: function()
+			                        {
+			                        	location.reload();
+			                            console.log("Updated");                                    
+			                        }
+					        });
+						}
+					}
+				</script>
+			</div>
 		</div>
 
 		<div class="row">
