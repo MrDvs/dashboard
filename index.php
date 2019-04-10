@@ -1,8 +1,10 @@
 <?php 
 
 require './DB.php';
-DB::create();
 session_start();
+if (!isset($_SESSION['mode'])) {
+	$_SESSION['mode'] = "light";
+}
 
 ?>
 <!DOCTYPE html>
@@ -34,8 +36,9 @@ session_start();
 					<input type="checkbox" class="custom-control-input" id="customSwitch1" onclick="toggleDarkmode(this)" <?php echo ($_SESSION['mode'] == "dark" ? 'checked' : '') ?>>
 					<label class="custom-control-label" for="customSwitch1">Toggle Dark mode</label>
 				</div>
-				<script src="./scripts/toggleDarkmode.js"></script>
+				<div id="sleeptime"></div>
 			</div>
+
 		</div>
 
 		<div class="row">

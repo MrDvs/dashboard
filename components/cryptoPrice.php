@@ -16,7 +16,7 @@ foreach ($coins as $coin) {
 
 <?php
 $json = json_decode(file_get_contents('https://widgets.coinmarketcap.com/v2/ticker/'.$coin['cmc_id'].'/?ref=widget&convert=EUR'))->data;
-echo "Your ".$coin['amount']." ".$json->symbol." is worth ".$json->quotes->EUR->price * $coin['amount']; 
+echo "Your ".$coin['amount']." ".$json->symbol." is worth €".$json->quotes->EUR->price * $coin['amount']; 
 }
 ?>
 

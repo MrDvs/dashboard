@@ -47,6 +47,8 @@ class DB {
 			PRIMARY KEY (`id`)
 			) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1";
 		self::connect()->exec($sql);
+
+		echo 'succesfully created DB';
 	}
 
 } 
