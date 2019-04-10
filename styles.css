@@ -1,0 +1,32 @@
+/* Dark Mode */
+/*body {
+	background-color: #1B3341;
+}*/
+
+body {
+	background-color: #e8e8e8 !important;
+}
+
+.container-fluid {
+	max-width: 95%;
+}
+
+.todo-title, .text-danger, .text-warning, .text-success {
+	margin-bottom: 0;
+}
+
+.todo-hr {
+	margin: 0;
+}
+
+#currentTime {
+	margin: auto;
+	font-size: 3rem;
+}
+
+.dashboard-component {
+	background-color: #FFF;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 2vh;
+}
