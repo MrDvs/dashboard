@@ -3,13 +3,20 @@
 require './DB.php';
 session_start();
 
+$_SESSION['mode'] = "light";
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head style="background-color: green !important">
 	<meta charset="UTF-8">
 	<title>Dashboard</title>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<?php  
+		if (isset($_SESSION['mode'])) {
+			echo "<link rel='stylesheet' href='./css/".$_SESSION['mode']."mode.css'>";
+		}
+	?>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script
@@ -26,7 +33,7 @@ session_start();
 		</div>
 
 		<div class="row">
-			<div class="col-md-4 dashboard-component">
+			<div class="col-md-5 dashboard-component">
 				<?php include('./components/weather.php') ?>
 			</div>
 			<div class="col-md-5 dashboard-component">

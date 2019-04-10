@@ -1,0 +1,20 @@
+/* Dark Mode */
+body {
+	background-color: #1B3341 !important;
+}
+
+.dashboard-component {
+	background-color: #274d63;
+}
+
+* {
+	color: #FFF;
+}
+
+a {
+	color: #58b8ef !important;
+}
+
+select {
+	background-color: #274d63 !important;
+}

@@ -1,0 +1,8 @@
+/* Light mode */
+body {
+	background-color: #e8e8e8 !important;
+}
+
+.dashboard-component {
+	background-color: #FFF;
+}
