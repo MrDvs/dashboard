@@ -33,33 +33,7 @@ session_start();
 					<input type="checkbox" class="custom-control-input" id="customSwitch1" onclick="toggleDarkmode(this)" <?php echo ($_SESSION['mode'] == "dark" ? 'checked' : '') ?>>
 					<label class="custom-control-label" for="customSwitch1">Toggle Dark mode</label>
 				</div>
-				<script>
-					function toggleDarkmode(state) {
-						if (state.checked) {
-							$.ajax({
-					            url: "./ajax/toggleDarkmode.php",
-					            type: "POST",
-					            data: { 'mode': "dark" },                   
-					            success: function()
-			                        {
-			                        	location.reload();
-			                            console.log("Updated");                                    
-			                        }
-					        });
-						} else {
-							$.ajax({
-					            url: "./ajax/toggleDarkmode.php",
-					            type: "POST",
-					            data: { 'mode': "light" },                   
-					            success: function()
-			                        {
-			                        	location.reload();
-			                            console.log("Updated");                                    
-			                        }
-					        });
-						}
-					}
-				</script>
+				<script src="./scripts/toggleDarkmode.js"></script>
 			</div>
 		</div>
 
@@ -67,7 +41,7 @@ session_start();
 			<div class="col-md-5 dashboard-component">
 				<?php include('./components/weather.php') ?>
 			</div>
-			<div class="col-md-5 dashboard-component">
+			<div class="col-md-6 dashboard-component">
 				<?php include('./components/todo.php') ?>
 			</div>
 		</div>
@@ -75,8 +49,9 @@ session_start();
 		<div class="row">
 			<div class="col-md-3 dashboard-component" >		
 				<?php include('./components/cryptoPrice.php') ?>
+				
 			</div>
-			<div class="col-md-7 dashboard-component">
+			<div class="col-md-7 dashboard-component" style="overflow: auto;">
 				<?php include('./components/googleCalendar.php') ?>
 			</div>	
 		</div>
@@ -88,5 +63,8 @@ session_start();
 		</div>
 
 	</div>
+	<script>
+	
+	</script>
 </body>
 </html>
