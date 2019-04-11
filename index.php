@@ -35,8 +35,8 @@ if (!isset($_SESSION['mode'])) {
 				<div class="custom-control custom-switch">
 					<input type="checkbox" class="custom-control-input" id="customSwitch1" onclick="toggleDarkmode(this)" <?php echo ($_SESSION['mode'] == "dark" ? 'checked' : '') ?>>
 					<label class="custom-control-label" for="customSwitch1">Toggle Dark mode</label>
+					<script src="./scripts/toggleDarkmode.js"></script>
 				</div>
-				<div id="sleeptime"></div>
 			</div>
 
 		</div>

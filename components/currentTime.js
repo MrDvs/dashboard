@@ -6,9 +6,8 @@ function startTime() {
   m = checkTime(m);
   s = checkTime(s);
   document.getElementById('currentTime').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
-  setTimeout(checkSleepTime, 300000)
+  h + ":" + m;
+  var t = setTimeout(startTime, 5000);
 }
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
