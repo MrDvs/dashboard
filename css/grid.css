@@ -1,0 +1,23 @@
+/*  SECTIONS  */
+.rsection {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.rcol {
+	border: 1px solid red;
+	border-radius: 5px;
+	padding: 15px;
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.rcol:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.rgroup:before,
+.rgroup:after { content:""; display:table; }
+.rgroup:after { clear:both;}
+.rgroup { zoom:1; /* For IE 6/7 */ }

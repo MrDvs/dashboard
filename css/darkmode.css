@@ -3,7 +3,7 @@ body {
 	background-color: #1B3341 !important;
 }
 
-.dashboard-component {
+.dashboard-component, .rcol {
 	background-color: #274d63;
 }
 
