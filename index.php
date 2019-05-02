@@ -73,7 +73,7 @@ if (!isset($_SESSION['mode'])) {
 	</div>
 	<br><br>
 	<div class="container-fluid">
-		<div class="rsection rgroup" style="border: 1px solid blue">
+		<div class="rsection rgroup">
 
 			<div class="rcol">
 				<?php include('./components/todo.php') ?>
