@@ -58,7 +58,7 @@ if (!isset($_SESSION['mode'])) {
 			<div class="col-md-3 dashboard-component" >
 				<?php include('./components/cryptoPrice.php') ?>
 			</div>
-			<div class="col-md-7 dashboard-component" style="overflow: auto;">
+			<div class="col-md-8 dashboard-component" style="overflow: auto;">
 				<?php include('./components/googleCalendar.php') ?>
 			</div>
 		</div>
