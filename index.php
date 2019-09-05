@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require './DB.php';
 session_start();
@@ -15,7 +15,7 @@ if (!isset($_SESSION['mode'])) {
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="./css/styles.css">
-	<?php  
+	<?php
 		if (isset($_SESSION['mode'])) {
 			echo "<link rel='stylesheet' href='./css/".$_SESSION['mode']."mode.css'>";
 		}
@@ -47,7 +47,7 @@ if (!isset($_SESSION['mode'])) {
 
 		<div class="row">
 			<div class="col-md-5 dashboard-component">
-				<!-- <?php include('./components/weather.php') ?> -->
+				<?php include('./components/weather.php') ?>
 			</div>
 			<div class="col-md-6 dashboard-component">
 				<?php include('./components/todo.php') ?>
@@ -55,13 +55,13 @@ if (!isset($_SESSION['mode'])) {
 		</div>
 
 		<div class="row">
-			<div class="col-md-3 dashboard-component" >		
+			<div class="col-md-3 dashboard-component" >
 				<?php include('./components/cryptoPrice.php') ?>
-				
+
 			</div>
 			<div class="col-md-7 dashboard-component" style="overflow: auto;">
 				<?php include('./components/googleCalendar.php') ?>
-			</div>	
+			</div>
 		</div>
 
 		<div class="row">
@@ -70,24 +70,6 @@ if (!isset($_SESSION['mode'])) {
 			</div>
 		</div>
 
-	</div>
-	<br><br>
-	<div class="container-fluid">
-		<div class="rsection rgroup">
-
-			<div class="rcol">
-				<?php include('./components/todo.php') ?>
-			</div>
-
-			<div class="rcol">
-				<?php include('./components/cryptoPrice.php') ?>
-			</div>
-
-			<div class="rcol">
-				<?php include('./components/weather.php') ?>
-			</div>
-
-		</div>
 	</div>
 
 	<script src="./scripts/resize.js"></script>
