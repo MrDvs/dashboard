@@ -12,6 +12,8 @@ if (!isset($_SESSION['mode'])) {
 <head style="background-color: green !important">
 	<meta charset="UTF-8">
 	<title>Dashboard</title>
+
+	<!-- CSS Files -->
 	<link rel="stylesheet" href="./css/styles.css">
 	<?php  
 		if (isset($_SESSION['mode'])) {
@@ -19,13 +21,15 @@ if (!isset($_SESSION['mode'])) {
 		}
 	?>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/grid.css">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 </head>
-<body onload="startTime()">
+<body onload="startTime(); resize();" onresize="resize()">
 	<div class="container-fluid">
 
 		<div class="row">
@@ -43,7 +47,7 @@ if (!isset($_SESSION['mode'])) {
 
 		<div class="row">
 			<div class="col-md-5 dashboard-component">
-				<?php include('./components/weather.php') ?>
+				<!-- <?php include('./components/weather.php') ?> -->
 			</div>
 			<div class="col-md-6 dashboard-component">
 				<?php include('./components/todo.php') ?>
@@ -67,8 +71,25 @@ if (!isset($_SESSION['mode'])) {
 		</div>
 
 	</div>
-	<script>
-	
-	</script>
+	<br><br>
+	<div class="container-fluid">
+		<div class="rsection rgroup">
+
+			<div class="rcol">
+				<?php include('./components/todo.php') ?>
+			</div>
+
+			<div class="rcol">
+				<?php include('./components/cryptoPrice.php') ?>
+			</div>
+
+			<div class="rcol">
+				<?php include('./components/weather.php') ?>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="./scripts/resize.js"></script>
 </body>
 </html>
