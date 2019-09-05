@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 
 $bookmarks = DB::query('SELECT * FROM bookmarks');
@@ -9,7 +9,7 @@ $bookmarks = DB::query('SELECT * FROM bookmarks');
 <hr>
 
 <div class="row">
-<?php  
+<?php
 foreach ($bookmarks as $bookmark) {
 	echo "<div style='text-align: center;'>";
 		if (isset($bookmark['url']) && $bookmark['logo_path'] != '') {
@@ -21,5 +21,7 @@ foreach ($bookmarks as $bookmark) {
 		echo $img."<p><a href='".$bookmark['url']."' target='blank'>".$bookmark['name']."</a></p>";
 	echo "</div>";
 }
+
 ?>
+<img src="https://s2.googleusercontent.com/s2/favicons?domain=www.reddit.com">
 </div>
