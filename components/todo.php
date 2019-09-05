@@ -72,7 +72,7 @@ $todos = DB::query('SELECT * FROM todos');
 			$.ajax({
 	            url: "./ajax/addTodo.php",
 	            type: "POST",
-	            data: { 'todo-name': name, 'priority': '1' },
+	            data: { 'todo-name': name, 'priority': priority},
 	            success: function(data)
                     {
                         id = data;
